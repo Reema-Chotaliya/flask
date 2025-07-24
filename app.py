@@ -349,10 +349,21 @@ def generate_bar_chart(subj, marks, rollno):
     plt.ylim(0, 100)
     plt.title(f"Marks for Roll No {rollno}")
     plt.ylabel("Marks")
+    plt.xlabel(f"Subjects Of Rollno {rollno}", fontsize=12)
+    plt.grid(axis='y', linestyle='--', alpha=0.5)
 
     # quick color highlight
     for b, m in zip(bars, marks):
-        b.set_color("tab:green" if m >= 40 else "tab:red")
+        if m >= 80:
+            b.set_color("tab:purple")
+        elif m >= 40:
+            b.set_color("tab:cyan")
+        else :
+            b.set_color("tab:red")
+
+    # quick color highlight
+    #  for b, m in zip(bars, marks):
+       # b.set_color("tab:green" if m >= 40 else "tab:red")
 
     # annotate each bar
     for idx, m in enumerate(marks):
