@@ -349,6 +349,8 @@ def generate_bar_chart(subj, marks, rollno):
     plt.ylim(0, 100)
     plt.title(f"Marks for Roll No {rollno}")
     plt.ylabel("Marks")
+    plt.xlabel(f"Subjects Of Rollno {rollno}", fontsize=12)
+    plt.grid(axis='y', linestyle='--', alpha=0.5)
 
     # quick color highlight
     for b, m in zip(bars, marks):
